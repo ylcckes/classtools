@@ -15,12 +15,11 @@
     
     <style>
         /* ==================================== */
-        /* === 說明網頁的自定義風格 (已套用至全頁) === */
+        /* === 說明網頁的自定義風格 === */
         /* ==================================== */
         body {
             font-family: 'Zen Maru Gothic', 'Fredoka', sans-serif;
             background-color: #FFF9E6; /* 溫暖的米黃色背景 */
-            /* 活潑的點狀背景圖案 */
             background-image: radial-gradient(#FFD700 2px, transparent 2px), radial-gradient(#FF69B4 2px, transparent 2px);
             background-size: 30px 30px;
             background-position: 0 0, 15px 15px;
@@ -28,10 +27,9 @@
         }
 
         h1, h2, h3 {
-            color: #5D5FEF; /* 標題主要顏色 */
+            color: #5D5FEF;
         }
 
-        /* 活潑的卡片效果 */
         .fun-card {
             background: white;
             border-radius: 25px;
@@ -40,12 +38,11 @@
             transition: all 0.3s ease;
         }
         .fun-card:hover {
-            transform: translateY(-5px) rotate(1deg);
+            transform: translateY(-5px) rotate(0.5deg);
             box-shadow: 12px 12px 0px rgba(93, 95, 239, 0.3);
             border-color: #FF9F1C;
         }
 
-        /* 活潑的按鈕樣式 */
         .btn-jump {
             display: inline-block;
             color: white;
@@ -54,15 +51,15 @@
             font-weight: bold;
             transition: all 0.1s;
             cursor: pointer;
+            text-align: center;
         }
-        .btn-jump-green { box-shadow: 0 4px 0 #3b82f6; } /* Tailwind blue-600 shadow fix */
-        .btn-jump-blue { box-shadow: 0 4px 0 #1d4ed8; } /* Tailwind blue-700 shadow fix */
+        .btn-jump-green { box-shadow: 0 4px 0 #3b82f6; }
+        .btn-jump-blue { box-shadow: 0 4px 0 #1d4ed8; }
         .btn-jump:active {
             transform: translateY(4px);
-            box-shadow: 0 0 0 #D63031; /* Use general active effect */
+            box-shadow: 0 0 0 #D63031;
         }
 
-        /* 步驟數字球 */
         .step-ball {
             width: 40px;
             height: 40px;
@@ -78,19 +75,17 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        /* 導覽列 */
         .nav-sticky {
             position: sticky;
             top: 10px;
             z-index: 50;
-            background: rgba(255, 255, 255, 0.95); /* 增加透明度 */
-            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
             border-radius: 50px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             margin: 0 10px;
         }
 
-        /* 動畫 */
         @keyframes float {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
@@ -107,52 +102,47 @@
             color: white;
         }
         
-        /* 讓表格連結的按鈕更符合新主題 */
         .class-btn-style {
-            background-color: #FF9F1C !important; /* 新主題色：活潑的橘色 */
+            background-color: #FF9F1C !important;
             box-shadow: 0 4px 0 #D63031;
         }
-        .class-btn-style:hover {
-            background-color: #FFC35C !important;
-        }
-        .class-btn-style:active {
-             transform: translateY(4px);
-             box-shadow: 0 0 0 #D63031;
+        .class-btn-style:hover { background-color: #FFC35C !important; }
+        
+        .special-row {
+            background-color: #f0f4ff !important;
+            border-left: 6px solid #5D5FEF;
         }
     </style>
 </head>
 <body class="pb-20">
 
-    <!-- 頁首 Hero 區塊 (來自新檔案) -->
+    <!-- 頁首 Hero 區塊 -->
     <header class="text-center pt-16 pb-10 px-4 relative overflow-hidden">
-        <div class="absolute top-10 left-10 text-6xl text-yellow-400 opacity-50 floating"><i class="fas fa-sun"></i></div>
-        <div class="absolute bottom-10 right-10 text-6xl text-pink-400 opacity-50 floating" style="animation-delay: 1s;"><i class="fas fa-cloud"></i></div>
+        <div class="absolute top-10 left-10 text-6xl text-yellow-400 opacity-30 floating"><i class="fas fa-pencil-alt"></i></div>
+        <div class="absolute bottom-10 right-10 text-6xl text-pink-400 opacity-30 floating" style="animation-delay: 1s;"><i class="fas fa-star"></i></div>
         
         <h1 class="text-4xl md:text-6xl font-black text-indigo-600 mb-4 tracking-wider">
             <i class="fas fa-shapes mr-2 text-pink-500"></i>剛好學：快樂新手村
         </h1>
-        <p class="text-xl text-gray-600 font-bold mb-8">成功國小互動工具指南。給老師的超簡單操作指南，跟著做就對了！</p>
+        <p class="text-xl text-gray-600 font-bold mb-8">成功國小互動工具指南。讓課堂變得超好玩！</p>
         
         <div class="flex justify-center gap-4 flex-wrap">
             <a href="#section-classes" class="btn-jump bg-blue-500 text-xl px-8 py-3 btn-jump-green">
-                <i class="fas fa-link mr-2"></i> 課堂連結
+                <i class="fas fa-link mr-2"></i> 快速連結
             </a>
-            <a href="#section-start" class="btn-jump bg-green-500 text-xl px-8 py-3 btn-jump-blue">
-                <i class="fas fa-book-open mr-2"></i> 教學指南
+            <a href="#section-features" class="btn-jump bg-purple-500 text-xl px-8 py-3 btn-jump-blue">
+                <i class="fas fa-wand-magic-sparkles mr-2"></i> 魔法功能
             </a>
         </div>
     </header>
 
-    <!-- 導覽列 (來自新檔案，並新增課堂連結) -->
+    <!-- 導覽列 -->
     <nav class="nav-sticky flex justify-around p-3 mb-12 max-w-4xl mx-auto">
         <a href="#section-classes" class="text-gray-600 hover:text-blue-500 font-bold flex flex-col items-center">
             <i class="fas fa-table text-xl mb-1"></i><span class="text-xs">課堂連結</span>
         </a>
         <a href="#section-start" class="text-gray-600 hover:text-pink-500 font-bold flex flex-col items-center">
             <i class="fas fa-rocket text-xl mb-1"></i><span class="text-xs">第一步</span>
-        </a>
-        <a href="#section-student" class="text-gray-600 hover:text-green-500 font-bold flex flex-col items-center">
-            <i class="fas fa-child text-xl mb-1"></i><span class="text-xs">學生加入</span>
         </a>
         <a href="#section-features" class="text-gray-600 hover:text-blue-500 font-bold flex flex-col items-center">
             <i class="fas fa-wand-magic-sparkles text-xl mb-1"></i><span class="text-xs">魔法功能</span>
@@ -164,34 +154,25 @@
 
     <div class="max-w-6xl mx-auto px-4 space-y-16">
         
-        <!-- ==================================== -->
-        <!-- 1. 原有的「課堂連結」區塊 (新增 QR Code 欄位) -->
-        <!-- ==================================== -->
+        <!-- 1. 課堂連結區塊 -->
         <section id="section-classes" class="scroll-mt-32">
             <div class="fun-card p-6 md:p-10">
                 <header class="text-center mb-8">
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-indigo-700 mb-2">成功國小各年級課堂連結</h2>
-                    <p class="text-gray-500 text-lg">點選您的年級，即可進入專屬的「剛好學」互動課堂，或掃描 QR Code 讓學生快速加入</p>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-indigo-700 mb-2">成功國小專屬連結</h2>
+                    <p class="text-gray-500 text-lg">快速進入對應的互動平台，掃描 QR Code 讓學生立即加入</p>
                 </header>
 
-                <!-- 表格容器 (確保在小螢幕上可以水平滾動) -->
                 <div class="overflow-x-auto rounded-lg border border-gray-200">
                     <table class="min-w-full divide-y divide-gray-200">
                         <thead class="bg-indigo-50">
                             <tr>
-                                <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">
-                                    年級
-                                </th>
-                                <th scope="col" class="px-3 py-3.5 text-center text-sm font-semibold text-gray-900">
-                                    快速連結
-                                </th>
-                                <th scope="col" class="px-3 py-3.5 text-center text-sm font-semibold text-gray-900">
-                                    QR Code
-                                </th>
+                                <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">工具類型</th>
+                                <th scope="col" class="px-3 py-3.5 text-center text-sm font-semibold text-gray-900">快速連結</th>
+                                <th scope="col" class="px-3 py-3.5 text-center text-sm font-semibold text-gray-900">QR Code</th>
                             </tr>
                         </thead>
                         <tbody id="class-table-body" class="divide-y divide-gray-100 bg-white">
-                            <!-- 資料將由 JavaScript 動態插入 -->
+                            <!-- JS 動態生成 -->
                         </tbody>
                     </table>
                 </div>
@@ -199,128 +180,68 @@
         </section>
 
 
-        <!-- ==================================== -->
-        <!-- 2. 老師準備篇 (新增任務派送說明) -->
-        <!-- ==================================== -->
+        <!-- 2. 老師準備篇 -->
         <section id="section-start" class="scroll-mt-32">
             <div class="text-center mb-10">
                 <span class="bg-pink-100 text-pink-600 px-4 py-2 rounded-full font-bold text-lg mb-2 inline-block">Teacher's Guide</span>
-                <h2 class="text-3xl font-black text-gray-800">第一步：老師準備開課囉！</h2>
+                <h2 class="text-3xl font-black text-gray-800">開始上課的簡單步驟</h2>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- 步驟 1 -->
                 <div class="fun-card p-6 relative">
                     <div class="absolute -top-5 -left-5 step-ball bg-pink-500">1</div>
-                    <h3 class="text-xl font-bold mb-4 mt-2 text-pink-500">設定資料庫 (Firebase，已為各班建好了)</h3>
-                    <p class="mb-4 text-gray-600">這是最難的一步，但只要做一次就好！這是為了把大家的回答存起來。</p>
-                    <ul class="list-disc list-inside space-y-2 text-sm text-gray-500 bg-gray-50 p-4 rounded-xl">
-                        <li>點擊右上角的 <i class="fas fa-cog text-gray-400"></i> <strong>Firebase 設定</strong>。</li>
-                        <li>把你申請好的代碼貼進去。</li>
-                        <li>或者使用老師提供的專用連結（問問資訊組長！）。</li>
-                        <li>看到綠色勾勾就成功囉！</li>
-                    </ul>
+                    <h3 class="text-xl font-bold mb-4 mt-2 text-pink-500">確認 Firebase 設定</h3>
+                    <p class="text-gray-600 text-sm">點擊工具右上角 <i class="fas fa-cog"></i> 齒輪，確認資料庫已正確連接，讓學生回答能被儲存。</p>
                 </div>
-
-                <!-- 步驟 2 -->
                 <div class="fun-card p-6 relative">
                     <div class="absolute -top-5 -left-5 step-ball bg-orange-500">2</div>
-                    <h3 class="text-xl font-bold mb-4 mt-2 text-orange-500">老師登入</h3>
-                    <p class="mb-4 text-gray-600">點選首頁粉紅色的「我是教師」按鈕。</p>
-                    <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded text-sm text-yellow-800 mb-4">
-                        <i class="fas fa-key mr-2"></i> <strong>通關密語：</strong> 
-                        <span class="font-mono text-lg font-bold bg-white px-2 rounded">tpet</span>
-                        <br>(如果系統問你密碼，請輸入這個)
-                    </div>
-                    <p class="text-gray-600">接著輸入一個好記的<strong>「教室代碼」</strong>（例如：601），然後按下進入。</p>
+                    <h3 class="text-xl font-bold mb-4 mt-2 text-orange-500">老師身份登入</h3>
+                    <p class="text-gray-600 text-sm">點選「我是教師」，輸入教室代碼。通關密語預設為 <strong>tpet</strong>。</p>
                 </div>
-                
-                <!-- 步驟 3 (新增任務派送說明) -->
                 <div class="fun-card p-6 relative">
                     <div class="absolute -top-5 -left-5 step-ball bg-teal-500">3</div>
-                    <h3 class="text-xl font-bold mb-4 mt-2 text-teal-500">⚡ 派送任務：讓學生畫面動起來！</h3>
-                    <p class="mb-4 text-gray-600">進入教師面板後，任務派送非常簡單：</p>
-                    <ul class="list-disc list-inside space-y-2 text-sm text-gray-700">
-                        <li>在教師面板上方的工具列，點選您想要使用的「魔法功能」圖示（例如：是非題）。</li>
-                        <li>設定完題目或選項後，點擊「開始」或「派送」按鈕。</li>
-                        <li>✅ <strong>即時同步：</strong>學生的平板畫面就會馬上切換到該任務介面，開始作答！</li>
-                    </ul>
+                    <h3 class="text-xl font-bold mb-4 mt-2 text-teal-500">同步派送任務</h3>
+                    <p class="text-gray-600 text-sm">在教師面板點擊功能圖示，學生的平板就會自動跳轉到對應的作答畫面！</p>
                 </div>
             </div>
         </section>
 
-        <!-- ==================================== -->
-        <!-- 3. 學生加入篇 -->
-        <!-- ==================================== -->
-        <section id="section-student" class="scroll-mt-32">
-            <div class="bg-green-100 rounded-3xl p-8 border-4 border-green-200 relative">
-                <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-2 rounded-full font-bold shadow-lg">
-                    <i class="fas fa-users mr-2"></i>學生怎麼加入？
-                </div>
-                <div class="grid md:grid-cols-3 gap-6 mt-6 text-center">
-                    <div>
-                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-md text-3xl text-green-500">
-                            <i class="fas fa-mobile-screen"></i>
-                        </div>
-                        <p class="font-bold text-gray-700">1. 手機/平板掃描 QR Code</p>
-                        <p class="text-sm text-gray-500 mt-2">請學生掃描上方的班級 QR Code，或請老師在課堂中投影 QR Code 即可。</p>
-                    </div>
-                    <div>
-                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-md text-3xl text-green-500">
-                            <i class="fas fa-fingerprint"></i>
-                        </div>
-                        <p class="font-bold text-gray-700">2. 點選「我是學生」</p>
-                        <p class="text-sm text-gray-500 mt-2">進入網頁後，點選藍色的按鈕。</p>
-                    </div>
-                    <div>
-                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-md text-3xl text-green-500">
-                            <i class="fas fa-id-card"></i>
-                        </div>
-                        <p class="font-bold text-gray-700">3. 輸入代碼與姓名</p>
-                        <p class="text-sm text-gray-500 mt-2">輸入老師剛剛設定的教室代碼 (如 Class101) 和自己的名字。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================================== -->
-        <!-- 4. 魔法功能篇 (核心互動) (新增情境說明) -->
-        <!-- ==================================== -->
+        <!-- 3. 魔法功能篇 (包含新增的手寫板) -->
         <section id="section-features" class="scroll-mt-32">
             <div class="text-center mb-10">
                 <h2 class="text-3xl font-black text-gray-800">
-                    <i class="fas fa-wand-magic-sparkles text-yellow-400 mr-2"></i>好多魔法互動功能！
+                    <i class="fas fa-wand-magic-sparkles text-yellow-400 mr-2"></i>多元互動功能
                 </h2>
-                <p class="text-gray-500">點選老師面板上的圖示，學生畫面就會自動切換喔！</p>
+                <p class="text-gray-500">針對不同教學情境選擇最適合的魔法工具</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- 是非題 -->
-                <div class="fun-card p-5 group">
+                <!-- 新增：互動手寫板 -->
+                <div class="fun-card p-5 group border-indigo-300 bg-indigo-50">
                     <div class="flex items-center gap-3 mb-3">
-                        <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl group-hover:scale-110 transition">
-                            <i class="fas fa-check"></i>
+                        <div class="w-12 h-12 bg-indigo-600 rounded-2xl flex items-center justify-center text-white text-2xl group-hover:scale-110 transition">
+                            <i class="fas fa-signature"></i>
                         </div>
-                        <h4 class="font-bold text-lg">是非題 (True/False)</h4>
+                        <h4 class="font-bold text-lg text-indigo-700">互動手寫板 (可重播)</h4>
                     </div>
                     <p class="text-gray-500 text-sm">
-                        最簡單的圈圈叉叉！適合快速確認全班是否聽懂了。
-                        <br><strong class="text-blue-500">💡 情境：</strong>課前快速檢視課本重點概念或預習內容。
+                        <span class="badge bg-indigo-500 mb-1">推薦</span><br>
+                        全校共用的動態畫布，支援<strong>「過程重播」</strong>功能，老師可以觀察學生的筆順與思維路徑。
+                        <br><strong class="text-indigo-600">💡 情境：</strong>國語生字練習、數學計算過程展示。
                     </p>
                 </div>
 
-                <!-- 選擇/排序/配對 -->
-                <div class="fun-card p-5 group border-green-200">
+                <!-- 繪圖題 -->
+                <div class="fun-card p-5 group border-purple-200">
                     <div class="flex items-center gap-3 mb-3">
-                        <div class="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 text-2xl group-hover:scale-110 transition">
-                            <i class="fas fa-list-ol"></i>
+                        <div class="w-12 h-12 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 text-2xl group-hover:scale-110 transition">
+                            <i class="fas fa-palette"></i>
                         </div>
-                        <h4 class="font-bold text-lg">選擇/排序/配對</h4>
+                        <h4 class="font-bold text-lg">一般繪圖題</h4>
                     </div>
                     <p class="text-gray-500 text-sm">
-                        <span class="badge bg-purple-500 mb-1">AI 支援</span><br>
-                        除了基本選擇題，還可以讓學生練習「順序排列」或「連連看」。不用自己出題，呼叫 AI 幫你出！
-                        <br><strong class="text-green-500">💡 情境：</strong>用 AI 產生的題目，讓學生練習科學分類或歷史事件排序。
+                        讓學生在底圖上作畫。
+                        <br><strong class="text-purple-500">💡 情境：</strong>在地圖上標註位置、繪製自然觀察圖。
                     </p>
                 </div>
 
@@ -333,151 +254,50 @@
                         <h4 class="font-bold text-lg">文字題 & 互評</h4>
                     </div>
                     <p class="text-gray-500 text-sm">
-                        讓學生打字回答。更棒的是可以開啟<strong class="text-pink-500">「互評模式」</strong>，讓同學互相按愛心投票！
-                        <br><strong class="text-orange-500">💡 情境：</strong>用於寫作初稿、心得分享，或讓學生互評對方的論點。
-                    </p>
-                </div>
-
-                <!-- 繪圖題 -->
-                <div class="fun-card p-5 group border-purple-200">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-12 h-12 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 text-2xl group-hover:scale-110 transition">
-                            <i class="fas fa-palette"></i>
-                        </div>
-                        <h4 class="font-bold text-lg">繪圖題</h4>
-                    </div>
-                    <p class="text-gray-500 text-sm">
-                        學生的畫布！老師可以上傳一張底圖（例如地圖、數學題），讓學生在上面畫畫或計算。
-                        <br><strong class="text-purple-500">💡 情境：</strong>在數學課上標註圖形面積、在自然課上繪製實驗流程圖或動植物器官。
-                    </p>
-                </div>
-
-                <!-- 即時文字雲 -->
-                <div class="fun-card p-5 group border-pink-200">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-600 text-2xl group-hover:scale-110 transition">
-                            <i class="fas fa-cloud"></i>
-                        </div>
-                        <h4 class="font-bold text-lg">即時文字雲</h4>
-                    </div>
-                    <p class="text-gray-500 text-sm">
-                        收集大家的關鍵字。越多人寫的詞，字就會變得越大！適合用來做腦力激盪。
-                        <br><strong class="text-pink-500">💡 情境：</strong>讓學生針對一個新主題快速提供關鍵字、進行課程總結或心得回饋。
-                    </p>
-                </div>
-
-                <!-- 閱讀測驗 -->
-                <div class="fun-card p-5 group border-rose-200">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-12 h-12 bg-rose-100 rounded-2xl flex items-center justify-center text-rose-600 text-2xl group-hover:scale-110 transition">
-                            <i class="fas fa-book-open-reader"></i>
-                        </div>
-                        <h4 class="font-bold text-lg">閱讀測驗 (PIRLS)</h4>
-                    </div>
-                    <p class="text-gray-500 text-sm">
-                        <span class="badge bg-purple-500 mb-1">AI 支援</span><br>
-                        左邊文章，右邊題目。學生可以用螢光筆畫重點。AI 可以幫你生成符合 PIRLS 四層次的題目喔！
-                        <br><strong class="text-rose-500">💡 情境：</strong>發一篇新聞或教材文章，即時測試學生的閱讀理解力與畫重點能力。
+                        讓學生打字並互相投票。
+                        <br><strong class="text-orange-500">💡 情境：</strong>腦力激盪、心得短文分享。
                     </p>
                 </div>
 
                 <!-- 錄音題 -->
-                <div class="fun-card p-5 group border-indigo-200">
+                <div class="fun-card p-5 group border-rose-200">
                     <div class="flex items-center gap-3 mb-3">
-                        <div class="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 text-2xl group-hover:scale-110 transition">
+                        <div class="w-12 h-12 bg-rose-100 rounded-2xl flex items-center justify-center text-rose-600 text-2xl group-hover:scale-110 transition">
                             <i class="fas fa-microphone"></i>
                         </div>
-                        <h4 class="font-bold text-lg">錄音題</h4>
+                        <h4 class="font-bold text-lg">口說錄音</h4>
                     </div>
                     <p class="text-gray-500 text-sm">
-                        英語口說練習的好幫手！學生錄音後直接上傳，老師可以在後台收聽或下載。
-                        <br><strong class="text-indigo-500">💡 情境：</strong>練習英文發音、國語朗讀、或進行簡短的口語報告。
+                        收集學生的發音作品。
+                        <br><strong class="text-rose-500">💡 情境：</strong>英文朗讀、國語演說練習。
                     </p>
                 </div>
 
-                <!-- 派送網址 -->
+                <!-- AI 閱讀測驗 -->
                 <div class="fun-card p-5 group border-teal-200">
                     <div class="flex items-center gap-3 mb-3">
                         <div class="w-12 h-12 bg-teal-100 rounded-2xl flex items-center justify-center text-teal-600 text-2xl group-hover:scale-110 transition">
-                            <i class="fas fa-paper-plane"></i>
+                            <i class="fas fa-book-reader"></i>
                         </div>
-                        <h4 class="font-bold text-lg">派送網址</h4>
+                        <h4 class="font-bold text-lg">AI 閱讀測驗</h4>
                     </div>
                     <p class="text-gray-500 text-sm">
-                        想讓學生看 YouTube 影片或特定網頁？貼上網址，學生平板就會自動跳轉過去！
-                        <br><strong class="text-teal-500">💡 情境：</strong>上課時統一打開某個學習網站、Google 表單或外部測驗連結。
+                        <span class="badge bg-purple-500 mb-1">AI 支援</span><br>
+                        由 AI 生成題目。學生邊讀邊畫重點，即時回傳作答結果。
                     </p>
                 </div>
 
-                <!-- 搶答 & 遊戲 -->
-                <div class="fun-card p-5 group border-amber-200">
+                <!-- 選擇/排序/配對 -->
+                <div class="fun-card p-5 group border-green-200">
                     <div class="flex items-center gap-3 mb-3">
-                        <div class="w-12 h-12 bg-amber-100 rounded-2xl flex items-center justify-center text-amber-600 text-2xl group-hover:scale-110 transition">
-                            <i class="fas fa-bolt"></i>
+                        <div class="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 text-2xl group-hover:scale-110 transition">
+                            <i class="fas fa-tasks"></i>
                         </div>
-                        <h4 class="font-bold text-lg">搶答與遊戲</h4>
+                        <h4 class="font-bold text-lg">多元測驗</h4>
                     </div>
                     <p class="text-gray-500 text-sm">
-                        比誰手快！還有「專注力遊戲」（舒爾特方格），訓練學生集中精神。
-                        <br><strong class="text-amber-500">💡 情境：</strong>課堂小組競賽、或在休息時間讓學生練習專注力，活絡氣氛。
+                        包含選擇題、排序題與連連看。
                     </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================================== -->
-        <!-- 5. 老師法寶篇 -->
-        <!-- ==================================== -->
-        <section id="section-tools" class="scroll-mt-32">
-            <div class="bg-white rounded-3xl p-8 border-4 border-gray-100 shadow-xl">
-                <div class="text-center mb-8">
-                    <h2 class="text-3xl font-black text-gray-800">
-                        <i class="fas fa-toolbox text-purple-500 mr-2"></i>老師的監控面板法寶
-                    </h2>
-                    <p class="text-gray-500">當學生在作答時，老師的畫面可以做這些事...</p>
-                </div>
-
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                    <div class="p-4 hover:bg-red-50 rounded-xl transition">
-                        <div class="text-red-500 text-3xl mb-2"><i class="fas fa-door-open"></i></div>
-                        <h4 class="font-bold">下課清空</h4>
-                        <p class="text-xs text-gray-500">結束課程，把所有資料清除（記得先下載要留的資料喔！）</p>
-                    </div>
-                    <div class="p-4 hover:bg-slate-100 rounded-xl transition">
-                        <div class="text-slate-700 text-3xl mb-2"><i class="fas fa-pause"></i></div>
-                        <h4 class="font-bold">暫停作答</h4>
-                        <p class="text-xs text-gray-500">讓學生畫面凍結，專心聽老師說話。</p>
-                    </div>
-                    <div class="p-4 hover:bg-orange-50 rounded-xl transition">
-                        <div class="text-orange-500 text-3xl mb-2"><i class="fas fa-dice"></i></div>
-                        <h4 class="font-bold">幸運抽籤</h4>
-                        <p class="text-xs text-gray-500">從有交卷的學生中，隨機抽一位起來發表。</p>
-                    </div>
-                    <div class="p-4 hover:bg-blue-50 rounded-xl transition">
-                        <div class="text-blue-600 text-3xl mb-2"><i class="fas fa-chart-pie"></i></div>
-                        <h4 class="font-bold">統計圖表</h4>
-                        <p class="text-xs text-gray-500">馬上看到全班的答題分佈（圓餅圖/長條圖）。</p>
-                    </div>
-                    <div class="p-4 hover:bg-violet-50 rounded-xl transition">
-                        <div class="text-violet-600 text-3xl mb-2"><i class="fas fa-robot"></i></div>
-                        <h4 class="font-bold">AI 分析</h4>
-                        <p class="text-xs text-gray-500">文字題太多看不完？請 AI 幫你歸納重點詞彙。</p>
-                    </div>
-                    <div class="p-4 hover:bg-purple-50 rounded-xl transition">
-                        <div class="text-purple-600 text-3xl mb-2"><i class="fas fa-file-arrow-down"></i></div>
-                        <h4 class="font-bold">下載成果</h4>
-                        <p class="text-xs text-gray-500">把學生的畫畫、錄音、文字全部打包下載。</p>
-                    </div>
-                    <div class="p-4 hover:bg-teal-50 rounded-xl transition">
-                        <div class="text-teal-600 text-3xl mb-2"><i class="fas fa-heart"></i></div>
-                        <h4 class="font-bold">開啟互評</h4>
-                        <p class="text-xs text-gray-500">讓學生看到彼此的作品並投票。</p>
-                    </div>
-                    <div class="p-4 hover:bg-gray-100 rounded-xl transition">
-                        <div class="text-gray-400 text-3xl mb-2"><i class="fas fa-eye"></i></div>
-                        <h4 class="font-bold">放大檢視</h4>
-                        <p class="text-xs text-gray-500">點擊學生的作品，可以放大給全班看。</p>
-                    </div>
                 </div>
             </div>
         </section>
@@ -486,65 +306,39 @@
 
     <!-- 頁尾 -->
     <footer class="mt-20 text-center text-gray-500 text-sm p-8 bg-white border-t-4 border-yellow-200">
-        <p>這是一個讓教學更快樂的工具，不用擔心弄壞，盡情嘗試吧！</p>
-        <p class="mt-2">&copy; 成功國小 | 課堂互動工具平台 <i class="fas fa-heart text-pink-400"></i> 加油！你是最棒的老師！</p>
+        <p>&copy; 成功國小 | 課堂互動工具平台 | 祝各位老師教學愉快！</p>
     </footer>
 
-    <!-- 回到頂端按鈕 -->
-    <a href="#" class="fixed bottom-6 right-6 bg-yellow-400 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-yellow-500 transition hover:-translate-y-1 z-50">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-
-    <!-- ==================================== -->
-    <!-- Modal for Large QR Code 浮層 (預設隱藏) -->
-    <!-- z-[100] 確保它在最上層 -->
-    <!-- ==================================== -->
+    <!-- QR Code Modal -->
     <div id="qr-modal" class="fixed inset-0 bg-black bg-opacity-70 hidden items-center justify-center p-4 z-[100]">
-        <div class="bg-white p-6 rounded-xl shadow-2xl max-w-sm w-full">
+        <div class="bg-white p-6 rounded-3xl shadow-2xl max-w-sm w-full">
             <div class="flex justify-between items-center border-b pb-3 mb-4">
-                <h3 class="text-2xl font-bold text-gray-800">班級專屬 QR Code</h3>
-                <button id="close-modal-btn" class="text-gray-400 hover:text-gray-600">
-                    <i class="fas fa-times text-2xl"></i>
-                </button>
+                <h3 class="text-xl font-bold text-indigo-600">掃描 QR Code 加入</h3>
+                <button onclick="closeQrModal()" class="text-gray-400 hover:text-gray-600"><i class="fas fa-times text-xl"></i></button>
             </div>
-            <div id="large-qr-container" class="flex justify-center p-4">
-                <!-- Large QR code will be rendered here -->
-            </div>
-            <p id="qr-link-text" class="text-center text-sm text-gray-600 break-all mt-4"></p>
-            <button onclick="closeQrModal()" class="w-full mt-6 btn-jump bg-pink-500 hover:bg-pink-600" style="box-shadow: 0 4px 0 #D63031;">
-                關閉
-            </button>
+            <div id="large-qr-container" class="flex justify-center p-4"></div>
+            <p id="qr-link-text" class="text-center text-xs text-gray-400 break-all mt-4"></p>
+            <button onclick="closeQrModal()" class="w-full mt-6 btn-jump bg-indigo-500" style="box-shadow: 0 4px 0 #3b40c4;">完成</button>
         </div>
     </div>
 
 
-    <!-- ==================================== -->
-    <!-- JavaScript 邏輯 (包含 QR Code 生成與 Modal 控制) -->
-    <!-- ==================================== -->
     <script>
-        // 確保 QR Code 函式在全域可用
         const qrModal = document.getElementById('qr-modal');
         const largeQrContainer = document.getElementById('large-qr-container');
         const qrLinkText = document.getElementById('qr-link-text');
 
-        function openQrModal(url, grade) {
-            // 1. 清空舊的 QR Code
+        function openQrModal(url) {
             largeQrContainer.innerHTML = '';
-            
-            // 2. 顯示連結文字
-            qrLinkText.textContent = `班級連結: ${url}`;
-
-            // 3. 生成新的大型 QR Code
+            qrLinkText.textContent = url;
             new QRCode(largeQrContainer, {
                 text: url,
-                width: 256, // 大圖尺寸
+                width: 256,
                 height: 256,
                 colorDark : "#000000",
                 colorLight : "#ffffff",
                 correctLevel : QRCode.CorrectLevel.H
             });
-
-            // 4. 顯示 Modal
             qrModal.classList.remove('hidden');
             qrModal.classList.add('flex');
         }
@@ -554,141 +348,66 @@
             qrModal.classList.remove('flex');
         }
 
-        // 綁定關閉按鈕
-        document.getElementById('close-modal-btn').addEventListener('click', closeQrModal);
-        
-        // 綁定點擊 Modal 外部關閉
-        qrModal.addEventListener('click', (e) => {
-            if (e.target === qrModal) {
-                closeQrModal();
-            }
-        });
+        qrModal.addEventListener('click', (e) => { if (e.target === qrModal) closeQrModal(); });
 
-        // 課堂資料 (不變)
+        // 資料設定 (新增手寫板連結)
         const classData = [
-            {
-                grade: '一年級',
-                url: 'https://ylcckes.github.io/classtools/class01.html'
-            },
-            {
-                grade: '二年級',
-                url: 'https://ylcckes.github.io/classtools/class02.html'
-            },
-            {
-                grade: '三年級',
-                url: 'https://ylcckes.github.io/classtools/class03.html'
-            },
-            {
-                grade: '四年級',
-                url: 'https://ylcckes.github.io/classtools/class04.html'
-            },
-            {
-                grade: '五年級',
-                url: 'https://ylcckes.github.io/classtools/class05.html'
-            },
-            {
-                grade: '六年級',
-                url: 'https://ylcckes.github.io/classtools/class06.html'
-            }
+            { grade: '🌟 全校：互動手寫板', url: 'https://ylcckes.github.io/handwrite', isSpecial: true },
+            { grade: '一年級', url: 'https://ylcckes.github.io/classtools/class01.html' },
+            { grade: '二年級', url: 'https://ylcckes.github.io/classtools/class02.html' },
+            { grade: '三年級', url: 'https://ylcckes.github.io/classtools/class03.html' },
+            { grade: '四年級', url: 'https://ylcckes.github.io/classtools/class04.html' },
+            { grade: '五年級', url: 'https://ylcckes.github.io/classtools/class05.html' },
+            { grade: '六年級', url: 'https://ylcckes.github.io/classtools/class06.html' }
         ];
 
         document.addEventListener('DOMContentLoaded', () => {
             const tableBody = document.getElementById('class-table-body');
 
             classData.forEach((item, index) => {
-                // 創建表格行
                 const row = document.createElement('tr');
-                // 設置斑馬紋效果：偶數行為淺灰色背景
-                if (index % 2 === 1) {
-                    row.classList.add('bg-gray-50');
-                }
+                if (item.isSpecial) row.classList.add('special-row');
+                else if (index % 2 === 1) row.classList.add('bg-gray-50');
 
-                // 創建年級單元格
                 const gradeCell = document.createElement('td');
-                gradeCell.classList.add('whitespace-nowrap', 'py-4', 'pl-4', 'pr-3', 'text-lg', 'font-medium', 'text-gray-900', 'sm:pl-6');
+                gradeCell.classList.add('py-4', 'pl-4', 'pr-3', 'text-lg', 'font-bold', 'text-indigo-900', 'sm:pl-6');
                 gradeCell.textContent = item.grade;
                 
-                // ===================================
-                // 創建連結操作單元格
-                // ===================================
                 const linkActionCell = document.createElement('td');
-                linkActionCell.classList.add('whitespace-nowrap', 'px-3', 'py-4', 'text-sm', 'text-gray-500', 'text-center');
-
-                // 創建連結按鈕元素
+                linkActionCell.classList.add('px-3', 'py-4', 'text-center');
                 const linkButton = document.createElement('a');
                 linkButton.href = item.url;
-                linkButton.textContent = '點我開始上課';
-                linkButton.target = '_blank'; // 開啟新分頁
-
-                // 應用按鈕樣式
-                linkButton.classList.add(
-                    'inline-flex', 'items-center', 'justify-center',
-                    'rounded-full', 'px-4', 'py-2', 'text-base',
-                    'font-semibold', 'text-white', 'shadow-md',
-                    'focus:outline-none', 'focus:ring-4',
-                    'focus:ring-indigo-500', 'focus:ring-opacity-50',
-                    'transition-all', 'duration-200', 'transform', 'hover:scale-105',
-                    'w-full', 'sm:w-auto',
-                    'class-btn-style'
-                );
+                linkButton.textContent = item.isSpecial ? '進入手寫板' : '進入課堂';
+                linkButton.target = '_blank';
+                linkButton.classList.add('btn-jump', 'text-sm', 'px-4', 'py-2', 'class-btn-style');
                 linkActionCell.appendChild(linkButton);
 
-
-                // ===================================
-                // 創建 QR Code 單元格
-                // ===================================
                 const qrCell = document.createElement('td');
-                qrCell.classList.add('whitespace-nowrap', 'px-3', 'py-4', 'text-sm', 'text-gray-500', 'text-center', 'space-y-2');
-                
-                // 1. 放置小 QR Code 的容器
+                qrCell.classList.add('px-3', 'py-4', 'text-center', 'space-y-2');
                 const smallQrContainer = document.createElement('div');
-                // 確保 ID 唯一且有效
-                const qrId = `qr-link-${item.grade.replace(/[^a-zA-Z0-9]/g, '')}-${index}`; 
+                const qrId = `qr-${index}`; 
                 smallQrContainer.id = qrId;
-                smallQrContainer.classList.add('inline-block', 'p-1', 'bg-white', 'rounded-lg', 'shadow');
+                smallQrContainer.classList.add('inline-block', 'p-1', 'bg-white', 'rounded', 'shadow-sm', 'cursor-pointer');
+                smallQrContainer.onclick = () => openQrModal(item.url);
                 qrCell.appendChild(smallQrContainer);
                 
-                // 2. 放大 QR Code 的按鈕
-                const viewQrButton = document.createElement('button');
-                viewQrButton.textContent = '放大檢視';
-                // 應用新的按鈕樣式 (使用 h3 的藍色作為按鈕色)
-                viewQrButton.classList.add(
-                    'inline-flex', 'items-center', 'justify-center',
-                    'rounded-full', 'px-3', 'py-1', 'text-xs',
-                    'font-semibold', 'text-white', 'shadow-md',
-                    'transition-all', 'duration-200', 'transform', 'hover:scale-105'
-                );
-                // 使用自定義樣式來覆蓋，使其顏色符合主題藍色
-                viewQrButton.style.backgroundColor = '#5D5FEF'; 
-                viewQrButton.style.boxShadow = '0 3px 0 #3b40c4';
+                const tip = document.createElement('div');
+                tip.textContent = '點擊放大';
+                tip.className = 'text-[10px] text-gray-400';
+                qrCell.appendChild(tip);
 
-                // 綁定點擊事件，開啟 Modal
-                viewQrButton.addEventListener('click', () => {
-                    openQrModal(item.url, item.grade);
-                });
-                qrCell.appendChild(viewQrButton);
-
-                // 組裝行
                 row.appendChild(gradeCell);
                 row.appendChild(linkActionCell);
                 row.appendChild(qrCell);
                 tableBody.appendChild(row);
                 
-                // 立即生成小 QR Code (必須在元素添加到 DOM 後)
-                // 使用 setTimeout 確保 DOM 渲染完成，增強穩定性
                 setTimeout(() => {
-                    // 檢查 QRCode 函式是否存在
                     if (typeof QRCode !== 'undefined') {
                         new QRCode(document.getElementById(qrId), {
                             text: item.url,
-                            width: 64, // 小圖尺寸
-                            height: 64,
-                            colorDark : "#000000",
-                            colorLight : "#ffffff",
-                            correctLevel : QRCode.CorrectLevel.L // 使用較低糾錯等級以保持簡單
+                            width: 50,
+                            height: 50
                         });
-                    } else {
-                        console.error("QRCode library not loaded.");
                     }
                 }, 0);
             });
